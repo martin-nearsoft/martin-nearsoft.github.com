@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: WinJS | Martin's Blog]]></title>
+  <link href="http://martin-nearsoft.github.io/blog/categories/winjs/atom.xml" rel="self"/>
+  <link href="http://martin-nearsoft.github.io/"/>
+  <updated>2013-09-15T16:45:31-07:00</updated>
+  <id>http://martin-nearsoft.github.io/</id>
+  <author>
+    <name><![CDATA[Martin Cotta]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WinJS: Binding datacontext to a page]]></title>
+    <link href="http://martin-nearsoft.github.io/blog/2013/09/15/winjs-binding-datacontext-to-a-page/"/>
+    <updated>2013-09-15T14:03:00-07:00</updated>
+    <id>http://martin-nearsoft.github.io/blog/2013/09/15/winjs-binding-datacontext-to-a-page</id>
+    <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis ante et nisi consequat, nec vulputate ante tincidunt. Cras euismod suscipit luctus. Donec sed nisi a erat malesuada malesuada ultricies vitae magna.</p>
+
+<h4>HTML:</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;<span class="nt">&lt;html&gt;</span>    <span class="nt">&lt;head&gt;</span>        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>        <span class="nt">&lt;title&gt;</span>Products<span class="nt">&lt;/title&gt;</span>        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://martin-nearsoft.github.io//Microsoft.WinJS.1.0/css/ui-dark.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://martin-nearsoft.github.io//Microsoft.WinJS.1.0/js/base.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://martin-nearsoft.github.io//Microsoft.WinJS.1.0/js/ui.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://martin-nearsoft.github.io/css/default.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>        <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://martin-nearsoft.github.io/pages/products/products.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://martin-nearsoft.github.io/pages/products/products.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>    <span class="nt">&lt;/head&gt;</span>    <span class="nt">&lt;body&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>    <span class="ni">&amp;lt;</span>div id=&quot;productTemplate&quot; data-win-control=&quot;WinJS.Binding.Template&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>        <span class="ni">&amp;lt;</span>img src=&quot;#&quot; data-win-bind=&quot;src: image; alt: name&quot; /<span class="ni">&amp;gt;</span>            <span class="ni">&amp;lt;</span>div data-win-bind=&quot;innerText: name&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>            <span class="ni">&amp;lt;</span>div data-win-bind=&quot;innerText: description&quot;<span class="ni">&amp;gt;&amp;lt;</span>/div<span class="ni">&amp;gt;</span>      <span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>        <span class="ni">&amp;lt;</span>div data-win-control=&quot;WinJS.UI.ListView&quot;
+</span><span class='line'>         data-win-options=&quot;{ itemTemplate:#productTemplate }&quot;
+</span><span class='line'>         data-win-bind=&quot;winControl.itemDataSource:products&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Quisque adipiscing odio interdum velit molestie, ullamcorper ornare lectus rutrum. Vestibulum in semper metus, ut tristique nisl. Ut laoreet molestie facilisis. Aenean condimentum in nibh eu malesuada.</p>
+
+<h4>Javascript:</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">ui</span><span class="p">.</span><span class="nx">Pages</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s2">&quot;/pages/products/products.html&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">ready</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataService</span><span class="p">().</span><span class="nx">getProducts</span><span class="p">();</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WinJS</span><span class="p">.</span><span class="nx">Binding</span><span class="p">.</span><span class="nx">List</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">dataContext</span> <span class="o">=</span>
+</span><span class='line'>            <span class="nx">WinJS</span><span class="p">.</span><span class="nx">Binding</span><span class="p">.</span><span class="nx">as</span><span class="p">({</span> <span class="nx">products</span><span class="o">:</span> <span class="nx">list</span><span class="p">.</span><span class="nx">dataSource</span> <span class="p">});</span>
+</span><span class='line'>        <span class="nx">WinJS</span><span class="p">.</span><span class="nx">Binding</span><span class="p">.</span><span class="nx">processAll</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">dataContext</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">})();</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Using MVVM</h3>
+
+<p>Etiam pellentesque libero ut lorem suscipit gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum laoreet mollis massa, nec fringilla purus congue quis. Donec et tortor adipiscing, viverra mauris at, aliquet massa.</p>
+
+<h4>HTML</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span>
+</span><span class='line'>    <span class="na">data-win-control=</span><span class="s">&quot;WinJS.UI.ListView&quot;</span>
+</span><span class='line'>    <span class="na">data-win-bind=</span><span class="s">&quot;winControl.itemDataSource:products;</span>
+</span><span class='line'><span class="s">                   winControl.itemTemplate:productTemplate&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>Javascript</h4>
+
+<p>Integer consequat, diam nec ultricies tristique, arcu dui laoreet lorem, id eleifend tellus lacus ac dolor.</p>
+
+<p>ProductsViewModel.js
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">viewModel</span> <span class="o">=</span> <span class="nx">WinJS</span><span class="p">.</span><span class="nx">Class</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span>
+</span><span class='line'>    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="nx">latestProducts</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DataService</span><span class="p">().</span><span class="nx">getProducts</span><span class="p">();</span>
+</span><span class='line'>        <span class="c1">//TODO: mark public members as supported-for-processing</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="nx">latestProducts</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">productTemplate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">itemPromise</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">return</span> <span class="nx">itemPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                <span class="kd">var</span> <span class="nx">template</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;productTemplate&quot;</span><span class="p">);</span>
+</span><span class='line'>                <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+</span><span class='line'>                <span class="nx">template</span><span class="p">.</span><span class="nx">winControl</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span> <span class="nx">container</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">return</span> <span class="nx">container</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">})</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">WinJS</span><span class="p">.</span><span class="nx">Namespace</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s2">&quot;App.ViewModels&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">ProductsViewModel</span><span class="o">:</span> <span class="nx">viewModel</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">})()</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>products.js</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">ui</span><span class="p">.</span><span class="nx">Pages</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s2">&quot;/pages/products/products.html&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">ready</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">WinJS</span><span class="p">.</span><span class="nx">Binding</span><span class="p">.</span><span class="nx">processAll</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="k">new</span> <span class="nx">App</span><span class="p">.</span><span class="nx">ViewModels</span><span class="p">.</span><span class="nx">ProductsViewModel</span><span class="p">());</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">})();</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>the end :)</p>
+]]></content>
+  </entry>
+  
+</feed>
