@@ -9,7 +9,7 @@
   <meta name="author" content="Martin Cotta">
 
   
-  <meta name="description" content=" About Sep 15th, 2013 My name is Martin … Sep 15th, 2013 Tweet Recent Posts WinJS: Binding Datacontext to a Page ">
+  <meta name="description" content="About Sep 15th, 2013 My name is Martin … Sep 15th, 2013 Tweet Recent Posts WinJS: Binding Datacontext to a Page GitHub Repos Status updating... @ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -38,7 +38,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">Martin's Blog</a></h1>
   
-    <h2>return await RunBlogAsync();</h2>
+    <h2>return await WriteBlogAsync();</h2>
   
 </hgroup>
 
@@ -110,6 +110,8 @@
   <a href="//twitter.com/share" class="twitter-share-button" data-url="http://martin-nearsoft.github.io/about/index.html" data-via="" data-counturl="http://martin-nearsoft.github.io/about/index.html" >Tweet</a>
   
   
+  <div class="g-plusone" data-size="medium"></div>
+  
   
 </div>
 
@@ -133,7 +135,45 @@
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/martin-nearsoft">@martin-nearsoft</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
+        github.showRepos({
+            user: 'martin-nearsoft',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/mcotta@nearsoft.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 
 
 
@@ -154,6 +194,14 @@
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
