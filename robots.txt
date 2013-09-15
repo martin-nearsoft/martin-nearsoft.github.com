@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://martin-nearsoft.github.io/sitemap.xml 
