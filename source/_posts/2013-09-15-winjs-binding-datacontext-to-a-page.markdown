@@ -2,7 +2,7 @@
 layout: post
 title: "WinJS: Binding datacontext to a page"
 date: 2013-09-15 14:03
-comments: true
+comments: false
 categories:
 - WinJS
 - Windows Store apps
