@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Windows Store apps | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Windows Store apps | Martin's Blog]]></title>
   <link href="http://martin-nearsoft.github.io/blog/categories/windows-store-apps/atom.xml" rel="self"/>
   <link href="http://martin-nearsoft.github.io/"/>
-  <updated>2013-09-15T17:16:01-07:00</updated>
+  <updated>2013-09-15T17:19:37-07:00</updated>
   <id>http://martin-nearsoft.github.io/</id>
   <author>
     <name><![CDATA[Martin Cotta]]></name>
